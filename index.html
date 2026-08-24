@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Francisco Commute Flow Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eceff1;
+            color: #37474f;
+        }
+        header {
+            background-color: #263238;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        header p {
+            margin: 8px 0 0 0;
+            font-size: 15px;
+            color: #b0bec5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        @media(min-width: 950px) {
+            .dashboard-grid {
+                grid-template-columns: 3fr 2fr;
+            }
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #cfd8dc;
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            border-bottom: 2px solid #eceff1;
+            padding-bottom: 12px;
+            color: #2c3e50;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 550px;
+            border-radius: 6px;
+        }
+        .readme-note {
+            background: #ffffff;
+            border-left: 4px solid #37474f;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>San Francisco Commute Flow Dashboard</h1>
+        <p>Big Data Visualization in Geoinformatics (Exercise 5) | BVIEER</p>
+    </header>
+    <div class="container">
+        <div class="readme-note">
+            <strong>Project Description:</strong> This interactive spatial dashboard presents commuting patterns in San Francisco. The 3D Arc Map links home locations (orange-red) to destination work coordinates (green). Below/beside, the distribution chart displays the relative frequency of route sizes.
+        </div>
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2>Interactive 3D Commute Flow Map (PyDeck)</h2>
+                <iframe src="arc_layer_map.html"></iframe>
+            </div>
+            <div class="card">
+                <h2>Commute Flow Distribution Histogram (Plotly)</h2>
+                <iframe src="extra_visualization.html"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
